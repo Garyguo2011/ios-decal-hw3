@@ -21,6 +21,9 @@
                                 <rect key="frame" x="279" y="157" width="43" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Guess"/>
+                                <connections>
+                                    <action selector="makeAGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h7d-8N-z3u"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="------------------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aU-V8-ThB">
                                 <rect key="frame" x="179" y="252" width="239" height="36"/>
@@ -40,7 +43,7 @@
                                 <rect key="frame" x="158" y="321" width="284" height="230"/>
                                 <animations/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter your guess here" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAe-Za-Rem">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your guess here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAe-Za-Rem">
                                 <rect key="frame" x="179" y="119" width="242" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -74,6 +77,7 @@
                         <outlet property="guessButton" destination="qL3-CI-TRb" id="OUY-g8-hoe"/>
                         <outlet property="guessTextField" destination="zAe-Za-Rem" id="ifB-sC-t1q"/>
                         <outlet property="hangmanImage" destination="L1Z-Z2-JAy" id="4z0-na-WhJ"/>
+                        <outlet property="newGameButton" destination="MoH-96-37h" id="BHN-bv-06U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
