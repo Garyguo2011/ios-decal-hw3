@@ -15,31 +15,39 @@ class HangmanViewController: UIViewController {
     @IBOutlet weak var currentGuess: UILabel!
     @IBOutlet weak var hangmanImage: UIImageView!
     @IBOutlet weak var newGameButton: UIBarButtonItem!
-    
+
     var hangman = Hangman()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         newGame()
-        newGameButton.action = "newGame"
     }
-    
+
     func newGame(){
         hangman.start()
-        currentGuess.text=""
+        currentGuess.text = hangman.knownString
+        print(hangman.answer)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    @IBAction func clickNewGame(sender: UIBarButtonItem) {
+        newGame()
+    }
+
     
     @IBAction func makeAGuess(sender: UIButton) {
-        hangman.guessLetter(guessTextField.text!)
+        guessTextField.text = guessTextField.text!.uppercaseString
+        let firstChar = Array(arrayLiteral: guessTextField.text)[0]
+        print(firstChar)
+        hangman.guessLetter(firstChar!)
         self.view.endEditing(true)
         guessTextField.text = ""
-        currentGuess.text = hangman.guesses()
+        currentGuess.text = hangman.knownString
     }
 }
 
